@@ -15,7 +15,6 @@ export class App extends Component {
     filter: '',
   };
 
-
 componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
@@ -30,9 +29,6 @@ componentDidMount() {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
     }
   }
-
-
-
 
   addContact = contact => {
     const isIncontacts = this.state.contacts.some(
