@@ -15,6 +15,23 @@ export class App extends Component {
     filter: '',
   };
 
+
+componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts})
+    }
+  }
+
+
+
+  
+
+
+
+
   addContact = contact => {
     const isIncontacts = this.state.contacts.some(
       ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
